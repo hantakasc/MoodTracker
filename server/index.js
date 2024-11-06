@@ -70,6 +70,21 @@ app.post('/api/moods', async (req, res) => {
   }
 });
 
+// Route to delete a mood entry from the database
+app.delete('/api/moods/:mood_id', async (req, res) => {
+  const { mood_id } = req.params;
+  try {
+    const result = await db.query('DELETE FROM mood_entries WHERE mood_id = $1 RETURNING *', [mood_id]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Mood entry not found' });
+    }
+    res.status(200).json({ message: 'Mood entry deleted', deletedMood: result.rows[0] });
+  } catch (err) {
+    console.error('Database deletion error:', err);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
