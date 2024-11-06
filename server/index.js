@@ -54,6 +54,32 @@ app.get('/api/quotes', (req, res) => {
   request.end();
 });
 
+// Route to retrieve all mood entries from the database
+app.get('/api/moods', async (req, res) => {
+  try {
+    const result = await db.query('SELECT * FROM mood_entries');
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Database query error:', err);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// Route to insert mood entries into the database
+app.post('/api/moods', async (req, res) => {
+  const { mood_type, notes } = req.body;
+  try {
+      const result = await db.query(
+          'INSERT INTO mood_entries (mood_type, notes, date) VALUES ($1, $2, NOW()) RETURNING *',
+          [mood_type, notes]
+      );
+      res.status(201).json(result.rows[0]);
+  } catch (err) {
+      console.error('Database insertion error:', err);
+      res.status(500).json({ error: 'Database error' });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
