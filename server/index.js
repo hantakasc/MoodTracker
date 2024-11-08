@@ -84,6 +84,22 @@ app.delete('/api/moods/:mood_id', async (req, res) => {
     res.status(500).json({ error: 'Database error' });
   }
 });
+// Route to update a mood entry
+app.put('/api/moods/:mood_id', async (req, res) => {
+  const { mood_id } = req.params;
+  const { mood_type, notes } = req.body;
+
+  try {
+    const result = await db.query(
+      'UPDATE mood_entries SET mood_type = $1, notes = $2 WHERE mood_id = $3 RETURNING *',
+      [mood_type, notes, mood_id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error('Database update error:', err);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
 
 // Start the server
 app.listen(PORT, () => {
