@@ -33,7 +33,7 @@ Prerequisites
 
 Clone the Repository
 
-git clone https://github.com/yourusername/MoodTracker.git
+git clone https://github.com/hantakasc/MoodTracker.git
 cd MoodTracker
 
 Backend Setup
