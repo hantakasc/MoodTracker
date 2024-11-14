@@ -6,30 +6,30 @@ The Mood Tracker App is a user-friendly tool designed to help users log their em
 
 ## 🌟 Features
 
-    •    Mood Logging: Users can select their mood, add notes, and track emotions over time.
-    •    Mood History: View a history of logged moods with dates and notes.
-    •    Mindfulness Quotes: Daily inspirational quotes fetched from an external API.
-    •    User Authentication: Secure login and signup using Auth0.
-    •    Accessibility: Designed with accessible color schemes and keyboard navigation.
-    •    Testing: Comprehensive unit and integration tests using Jest and React Testing Library.
+    - Mood Logging: Users can select their mood, add notes, and track emotions over time.
+    - Mood History: View a history of logged moods with dates and notes.
+    - Mindfulness Quotes: Daily inspirational quotes fetched from an external API.
+    - User Authentication: Secure login and signup using Auth0.
+    - Accessibility: Designed with accessible color schemes and keyboard navigation.
+    - Testing: Comprehensive unit and integration tests using Jest and React Testing Library.
 
 ## 🚀 Technologies Used
 
-    •    Frontend: React, React Router, CSS
-    •    Backend: Node.js, Express
-    •    Database: PostgreSQL
-    •    Authentication: Auth0
-    •    Deployment: Render (for both frontend and backend)
-    •    Testing: Jest, React Testing Library
-    •    External API: Mindfulness Quotes API (RapidAPI)
+    - Frontend: React, React Router, CSS
+    - Backend: Node.js, Express
+    - Database: PostgreSQL
+    - Authentication: Auth0
+    - Deployment: Render (for both frontend and backend)
+    - Testing: Jest, React Testing Library
+     -External API: Mindfulness Quotes API (RapidAPI)
 
 ## 🛠️ Installation and Setup
 
 Prerequisites
 
-    •    Node.js and npm
-    •    PostgreSQL
-    •    Git
+    - Node.js and npm
+    - PostgreSQL
+    - Git
 
 Clone the Repository
 
@@ -94,16 +94,16 @@ Run tests to ensure the components function as expected:
 ## 🛡️ Accessibility
 
 This app follows accessibility best practices:
-    •    High contrast colors for readability.
-    •    Keyboard navigability.
-    •    Accessible forms and buttons.
+    - High contrast colors for readability.
+    - Keyboard navigability.
+    - Accessible forms and buttons.
 
 ## 🧪 Testing Highlights
 
-    •    MoodLogger:
-    •    Tests for mood submission and validation.
-    •    MoodHistory:
-    •    Tests for rendering moods and handling delete/edit functionality.
+    - MoodLogger:
+    - Tests for mood submission and validation.
+    - MoodHistory:
+    - Tests for rendering moods and handling delete/edit functionality.
 
 ## 🤝 Contributing
 
